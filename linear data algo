@@ -1,0 +1,36 @@
+ALGORITHM linear_data
+VAR
+    t1,t2 : ARRAY_OF INTEGER;
+    n,m,i,j,sum,sum2:INTEGER
+BEGIN
+    n:=t1.length-1
+    m:=t2.length-1
+    sum:=0
+    sum2:=0
+    FOR i FROM 0 TO n STEP 1  DO
+        FOR j FROM 0 TO m STEP 1 DO
+            IF (t1[i]=t2[j]) THEN
+                sum2:=sum2+(t1[i]*2)
+                BREAK;
+            END_IF
+            IF (j=m) THEN
+                 sum:=sum+t1[i]
+            END_FOR
+            END_IF
+        END_FOR
+          
+
+    FOR i FROM 0 TO n STEP 1  DO
+        FOR j FROM 0 TO m STEP 1 DO
+            IF (t1[i]=t2[j]) THEN
+                BREAK;
+            END_IF
+            IF (j=m) THEN
+                sum:=sum+t2[i]
+            END_IF
+        END_FOR   
+    END_FOR
+    Write("° Sum of distinct elements= ",sum)
+    Write("° Sum of overlapping elements= ",sum2)
+
+END
